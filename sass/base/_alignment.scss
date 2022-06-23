@@ -1,0 +1,15 @@
+.flex-container {
+	display: flex;
+	
+	&.centered-horizontally {
+		justify-content: center;
+	}
+
+	&.centered-vertically {
+		align-items: center;
+	}
+
+	@media (max-width: $media-breakpoint-mobile) {
+		flex-wrap: wrap;
+	}
+}
