@@ -673,7 +673,7 @@ ul {
 }
 
 .section-heading {
-  margin-top: 2em;
+  margin-top: 0;
 }
 
 .section-jobs-preview .search-form-wrapper {
@@ -723,9 +723,12 @@ ul {
 .job-card .job-details {
   margin-top: 2em;
 }
-.job-card .job-type {
+.job-card .job-type, .job-card .job-price {
   margin-left: var(--spacing-s);
   display: inline-block;
+}
+.job-card .job-price {
+  font-weight: 700;
 }
 .job-card .meta-date {
   opacity: 0.5;
