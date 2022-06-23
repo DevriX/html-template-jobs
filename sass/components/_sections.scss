@@ -25,3 +25,32 @@
 		}
 	}
 }
+
+.section-jobs-dashboard {
+	.jobs-dashboard-header {
+		margin-bottom: var(--spacing-s);
+	}
+
+	.primary-container, .search-form-wrapper, .filter-wrapper {
+		margin-bottom: var(--spacing-s);
+	}
+
+	.search-form-wrapper {
+		margin-right: var(--spacing-s);
+		width: 11em;
+	}
+
+	.filter-wrapper {
+		width: 10.5em;
+	}
+
+	@media (max-width: $media-breakpoint-mobile) {	
+		.search-form-wrapper {
+			margin-right: 0;
+		}
+
+		.search-form-wrapper, .filter-wrapper, .secondary-container {
+			width: 100%;
+		}
+	}
+}

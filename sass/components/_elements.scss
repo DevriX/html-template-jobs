@@ -1,7 +1,7 @@
 .search-form {
 	&-wrapper {
-		width: 17em;
-		max-width: 100%;
+		width: 100%;
+		max-width: 17em;
 	}
 
 	&-input {
@@ -30,14 +30,14 @@
 
 	@media (max-width: $media-breakpoint-mobile) {
 		&-wrapper {
-			width: 100%;
+			max-width: 100%;
 		}
 	}
 }
 
 .filter-wrapper {
-	width: 14em;
-	max-width: 100%;
+	width: 100%;
+	max-width: 14em;
 
 	.filter-field-wrapper {
 		position: relative;
@@ -71,7 +71,7 @@
 	}
 
 	@media (max-width: $media-breakpoint-mobile) {		
-		width: 100%;		
+		max-width: 100%;		
 	}
 }
 
@@ -115,5 +115,27 @@
 		line-height: 1;
 		padding: 0.5em;
 		color: var(--color-base-invert);
+	}
+}
+
+.tabs-menu {	
+	display: flex;
+	align-items: center;
+
+	.menu-item {
+		&.current-menu-item {
+			text-decoration: underline;
+		}
+
+		a {
+			color: var(--color-base-invert);
+			font-size: 1.25em;
+			padding: 0.5em;
+			transition: 0.25s ease-in-out;
+
+			&:hover {
+				color: var(--color-primary);
+			}
+		}
 	}
 }

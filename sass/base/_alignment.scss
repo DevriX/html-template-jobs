@@ -9,6 +9,10 @@
 		align-items: center;
 	}
 
+	&.justified-horizontally {
+		justify-content: space-between;
+	}
+
 	@media (max-width: $media-breakpoint-mobile) {
 		flex-wrap: wrap;
 	}

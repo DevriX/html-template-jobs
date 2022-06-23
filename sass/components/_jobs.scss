@@ -49,13 +49,29 @@
 		margin-left: var(--spacing-s);
 	}
 
-	.job-edit {
+	.job-secondary {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.job-edit {
+		flex-grow: 1;
+	}
+
+	.job-edit, .job-actions {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
 
 		a {
-			color: black;
+			color: var(--color-base-invert);
 			display: inline-block;
+			transition: 0.25s ease-in-out;
+
+			&:hover {
+				color: var(--color-primary);
+			}
 		}
 
 		a + a {
