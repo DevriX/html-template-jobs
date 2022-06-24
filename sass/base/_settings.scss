@@ -27,7 +27,7 @@ $breakpoint-mobile-navigation: 48em;
 	--spacing-s: 1em;
 	--spacing-m: 1.5em;
 	--spacing-l: 2em;
-	--spacing-xl: 4em;
+	--spacing-xl: 3em;
 	--spacing-xxl: 8em;
 
 	// Typography
@@ -49,4 +49,14 @@ $breakpoint-mobile-navigation: 48em;
 
 	--shadow-default: 0px 2px 4px rgba(0, 0, 0, 0.06);
 
+	@media (max-width: $media-breakpoint-mobile) {
+		--font-size-h1: 1.75em;
+		--font-size-h2: 1.625em;
+		--font-size-h3: 1.5em;
+		--font-size-h4: 1.25em;
+		--font-size-h5: 1em;
+		
+		--spacing-l: 1em;
+		--spacing-xl: 1.5em;
+	}
 }

@@ -23,10 +23,13 @@
 							<a href="/index.html">Home</a>					
 						</li>
 						<li class="menu-item current-menu-item">
-							<a href="/register.html">Register</a>
+							<a href="/dashboard.html">Dashboard</a>
 						</li>
 						<li class="menu-item">
-							<a href="/login.html">Login</a>					
+							<a href="/profile.html">My Profile</a>					
+						</li>
+						<li class="menu-item">
+							<a href="/login.html">Sign Out</a>					
 						</li>
 					</ul>
 				</nav>
@@ -42,46 +45,25 @@
 					<div class="flex-container centered-vertically centered-horizontally">
 						<div class="form-box box-shadow">
 							<div class="section-heading">
-								<h2 class="heading-title">Register</h2>
+								<h2 class="heading-title">New job</h2>
 							</div>
 							<form>
-								<div class="flex-container justified-horizontally">
-									<div class="primary-container">
-										<h4 class="form-title">About me</h4>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="First Name*"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Last Name*"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Email*"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Password*"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Repeat Password*"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Phone Number"/>
-										</div>
+								<div class="flex-container flex-wrap">
+									<div class="form-field-wrapper width-large">
+										<input type="text" placeholder="Job title*"/>
 									</div>
-									<div class="secondary-container">
-										<h4 class="form-title">My Company</h4>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Company Name"/>
-										</div>
-										<div class="form-field-wrapper">
-											<input type="text" placeholder="Company Site"/>
-										</div>
-										<div class="form-field-wrapper">
-											<textarea placeholder="Description"></textarea>
-										</div>
-									</div>		
-								</div>					
-								<button class="button">
-									Register
+									<div class="form-field-wrapper width-large">
+										<input type="text" placeholder="Location"/>
+									</div>
+									<div class="form-field-wrapper width-large">
+										<input type="text" placeholder="Salary"/>
+									</div>
+									<div class="form-field-wrapper width-large">
+										<textarea placeholder="Description*"></textarea>
+									</div>	
+								</div>
+								<button type="submit" class="button">
+									Create
 								</button>
 							</form>
 						</div>

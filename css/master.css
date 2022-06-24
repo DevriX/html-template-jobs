@@ -353,7 +353,7 @@ template {
   --spacing-s: 1em;
   --spacing-m: 1.5em;
   --spacing-l: 2em;
-  --spacing-xl: 4em;
+  --spacing-xl: 3em;
   --spacing-xxl: 8em;
   --font-primary: "DM Sans", sans-serif;
   --font-size-h1: 2em;
@@ -367,6 +367,17 @@ template {
   --border-radius-large: 1.5em;
   --shadow-default: 0px 2px 4px rgba(0, 0, 0, 0.06);
 }
+@media (max-width: 42rem) {
+  :root {
+    --font-size-h1: 1.75em;
+    --font-size-h2: 1.625em;
+    --font-size-h3: 1.5em;
+    --font-size-h4: 1.25em;
+    --font-size-h5: 1em;
+    --spacing-l: 1em;
+    --spacing-xl: 1.5em;
+  }
+}
 
 .flex-container {
   display: flex;
@@ -379,6 +390,9 @@ template {
 }
 .flex-container.justified-horizontally {
   justify-content: space-between;
+}
+.flex-container.flex-wrap {
+  flex-wrap: wrap;
 }
 @media (max-width: 42rem) {
   .flex-container {
@@ -711,20 +725,24 @@ ul {
 .form-box {
   text-align: center;
   width: 100%;
-  max-width: max-content;
+  max-width: 40em;
 }
 .form-box.box-shadow {
   background-color: var(--color-base-light);
   box-shadow: var(--shadow-default);
   border-radius: var(--border-radius-small);
-  padding: var(--spacing-l);
+  padding: var(--spacing-xl);
+}
+.form-box .section-heading {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
 }
 .form-box .heading-title {
   margin-top: 0;
   line-height: 1;
-  text-align: center;
 }
-.form-box input, .form-box textarea {
+.form-box input:not([type=file]), .form-box textarea {
   outline: none;
   padding: 0.5em 1em;
   font-size: var(--font-size-h6);
@@ -735,31 +753,48 @@ ul {
   max-width: 100%;
   background-color: var(--color-base-light);
 }
-.form-box input::placeholder, .form-box textarea::placeholder {
+.form-box input:not([type=file])::placeholder, .form-box textarea::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--color-base-invert);
   opacity: 1;
   /* Firefox */
 }
-.form-box input:-ms-input-placeholder, .form-box textarea:-ms-input-placeholder {
+.form-box input:not([type=file]):-ms-input-placeholder, .form-box textarea:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: var(--color-base-invert);
 }
-.form-box input::-ms-input-placeholder, .form-box textarea::-ms-input-placeholder {
+.form-box input:not([type=file])::-ms-input-placeholder, .form-box textarea::-ms-input-placeholder {
   /* Microsoft Edge */
   color: var(--color-base-invert);
+}
+.form-box input[type=file] {
+  width: 100%;
 }
 .form-box textarea {
   resize: none;
   height: 12.375em;
+  width: 100%;
 }
-.form-box .form-field-wrapper:not(:last-child) {
+.form-box .form-field-wrapper:not(:last-of-type) {
   margin-bottom: 0.875em;
 }
-.form-box .flex-container + .button[type=submit] {
-  margin-top: 2.5em;
+.form-box .form-field-wrapper.width-medium {
+  flex: 0 0 calc(100% / 2 - 1em);
+  width: 100%;
+  max-width: calc(100% / 2 - 1em);
 }
-.form-box .button[type=submit] {
+.form-box .form-field-wrapper.width-large {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+}
+.form-box .form-field-wrapper.width-large input {
+  width: 100%;
+}
+.form-box .flex-container + .button {
+  margin-top: var(--spacing-l);
+}
+.form-box .button {
   --button-border-radius: var(--border-radius-large);
   display: block;
   margin: 0.875em auto 0;
@@ -783,10 +818,20 @@ ul {
     max-width: 100%;
   }
   .form-box .secondary-container {
-    margin-top: 2em;
+    margin-top: 1em;
+  }
+  .form-box input:not([type=file]), .form-box textarea {
+    width: 100%;
   }
   .form-box textarea {
     height: 8em;
+  }
+  .form-box .section-heading {
+    max-width: 100%;
+  }
+  .form-box .form-field-wrapper.width-medium {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
@@ -835,6 +880,13 @@ ul {
   }
 }
 
+.section-login .form-box {
+  max-width: 24em;
+}
+.section-login .button-inline {
+  margin-top: 0;
+}
+
 .jobs-listing {
   margin: 0;
   padding: 0;
@@ -865,7 +917,7 @@ ul {
   color: black;
 }
 .job-card .job-details {
-  margin-top: 2em;
+  margin-top: var(--spacing-l);
 }
 .job-card .job-type, .job-card .job-price {
   margin-left: var(--spacing-s);
@@ -934,7 +986,7 @@ ul {
 }
 .job-single .job-secondary {
   flex: 0 0 14em;
-  margin-left: 2em;
+  margin-left: var(--spacing-l);
   text-align: center;
 }
 .job-single .job-secondary .button {

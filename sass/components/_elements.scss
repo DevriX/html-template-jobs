@@ -147,22 +147,27 @@
 .form-box {
 	text-align: center;
 	width: 100%;
-    max-width: max-content;
+	max-width: 40em;
 
 	&.box-shadow {
 		background-color: var(--color-base-light);
 		box-shadow: var(--shadow-default);
 		border-radius: var(--border-radius-small);
-		padding: var(--spacing-l);
+		padding: var(--spacing-xl);
+	}
+
+	.section-heading {
+		width: 100%;
+		max-width: 80%;
+		margin: 0 auto;
 	}
 
 	.heading-title {
 		margin-top: 0;
 		line-height: 1;
-		text-align: center;
 	}
 
-	input, textarea {
+	input:not([type="file"]), textarea {
 		outline: none;
 		padding: 0.5em 1em;
 		font-size: var(--font-size-h6);
@@ -188,20 +193,43 @@
 		}
 	}
 
+	input[type="file"] {
+		width: 100%;
+	}
+
 	textarea {
 		resize: none;
 		height: 12.375em;
+		width: 100%;
 	}
 
-	.form-field-wrapper:not(:last-child) {
-		margin-bottom: 0.875em;
+	.form-field-wrapper {
+		&:not(:last-of-type) {
+			margin-bottom: 0.875em;
+		}
+
+		&.width-medium {
+			flex: 0 0 calc(100% / 2 - 1em);
+			width: 100%;
+			max-width: calc(100% / 2 - 1em);
+		}
+
+		&.width-large {
+			flex: 0 0 100%;
+			width: 100%;
+			max-width: 100%;
+
+			input {
+				width: 100%;
+			}
+		}
 	}
 
-	.flex-container + .button[type="submit"] {
-		margin-top: 2.5em;
+	.flex-container + .button {
+		margin-top: var(--spacing-l);
 	}
 
-	.button[type="submit"] {
+	.button {
 		--button-border-radius: var(--border-radius-large);
 		display: block;
 		margin: 0.875em auto 0;
@@ -229,11 +257,26 @@
 		}
 
 		.secondary-container {
-			margin-top: 2em;
+			margin-top: 1em;
+		}
+
+		input:not([type="file"]), textarea {
+			width: 100%;
 		}
 
 		textarea {
 			height: 8em;
+		}
+
+		.section-heading {
+			max-width: 100%;
+		}
+
+		.form-field-wrapper {	
+			&.width-medium {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
 		}
 	}
 }

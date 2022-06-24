@@ -13,6 +13,10 @@
 		justify-content: space-between;
 	}
 
+	&.flex-wrap {
+		flex-wrap: wrap;
+	}
+
 	@media (max-width: $media-breakpoint-mobile) {
 		flex-wrap: wrap;
 	}
