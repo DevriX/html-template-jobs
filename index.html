@@ -178,6 +178,34 @@
 				</div>
 			</section>	
 		</main>
+		
+		<footer class="site-footer">
+			<div class="row">
+				<p>Copyright 2020 | Developer links: 
+					<a href="/edits.html">Edits</a>,
+					<a href="/index.html">Home</a>,
+					<a href="/single.html">Single</a>
+				</p>
+			</div>
+		</footer>
 	</div>
+
+	<script>
+		if(window.innerWidth <= 768) {
+			const siteHeader = document.querySelector('.site-header');
+			const mobileMenuToggle = document.querySelector(".menu-toggle");
+			const nav = document.querySelector(".site-header-navigation");
+
+			mobileMenuToggle.addEventListener("click", function (e) {
+				if (siteHeader.classList.contains("is-active")) {
+					siteHeader.classList.remove("is-active");
+					nav.style.transform = "translateY(-100%)";
+				} else {
+					siteHeader.classList.add("is-active");
+					nav.style.transform = "translateY(0)";
+				}
+			});
+		}		
+	</script>
 </body>
 </html>

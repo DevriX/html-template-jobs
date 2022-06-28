@@ -35,13 +35,9 @@
 		margin-top: 2em;
 	}
 
-	.job-type, .job-price {
+	.job-type {
 		margin-left: var(--spacing-s);
 		display: inline-block;
-	}
-
-	.job-price {
-		font-weight: 700;
 	}
 
 	.meta-date {
